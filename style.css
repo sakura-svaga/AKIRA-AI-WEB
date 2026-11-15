@@ -2286,3 +2286,106 @@ button {
     animation: none;
   }
 }
+
+/* =====================================================
+   AKIRA MOBILE BOTTOM NAVIGATION
+===================================================== */
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .main {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .chat-viewport {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .composer-area {
+    flex: 0 0 auto;
+    padding-bottom: 8px;
+  }
+
+  .mobile-nav {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 61px;
+    padding: 5px 10px max(7px, env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(180, 185, 255, .11);
+    background: rgba(10, 12, 23, .88);
+    backdrop-filter: blur(30px) saturate(160%);
+    -webkit-backdrop-filter: blur(30px) saturate(160%);
+  }
+
+  .mobile-nav-item {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 48px;
+    border: 0;
+    border-radius: 14px;
+    background: transparent;
+    color: #7e86a3;
+    cursor: pointer;
+    transition: .25s cubic-bezier(.16, 1, .3, 1);
+  }
+
+  .mobile-nav-item > span {
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .mobile-nav-item small {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
+
+  .mobile-nav-item.active {
+    color: #c0b5ff;
+    background: linear-gradient(
+      180deg,
+      rgba(137, 120, 255, .13),
+      rgba(137, 120, 255, .025)
+    );
+  }
+
+  .mobile-nav-item.active::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    width: 22px;
+    height: 2px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #8b8bff, #c3a1ff);
+    box-shadow: 0 0 12px rgba(151, 130, 255, .8);
+  }
+
+  .mobile-nav-item:active {
+    transform: scale(.94);
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-nav {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .mobile-nav-item > span {
+    font-size: 19px;
+  }
+}
