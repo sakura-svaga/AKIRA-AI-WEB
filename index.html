@@ -3,10 +3,10 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#090b12">
-  <meta name="description" content="AKIRA AI — your personal intelligence workspace">
-  <title>AKIRA AI — Intelligence Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080a12">
+  <meta name="description" content="AKIRA AI — personal intelligence workspace">
+  <title>AKIRA — AI Workspace</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,11 +21,11 @@
 
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="brand" href="#" aria-label="AKIRA AI home">
+        <a class="brand" href="#" aria-label="AKIRA">
           <span class="brand-symbol">A<span>✳</span></span>
           <span class="brand-copy">
             <strong>AKIRA<span> AI</span></strong>
-            <small>INTELLIGENCE SYSTEM</small>
+            <small>INTELLIGENCE SPACE</small>
           </span>
         </a>
         <button class="icon-button sidebar-close" id="closeSidebar" aria-label="Закрыть меню">×</button>
@@ -52,11 +52,11 @@
 
       <div class="history-section">
         <div class="history-heading">
-          <span>ИСТОРИЯ</span>
-          <button class="tiny-button" id="clearHistory" title="Очистить историю">•••</button>
+          <span>ПОСЛЕДНИЕ ДИАЛОГИ</span>
+          <button class="tiny-button" id="clearHistory" aria-label="Очистить историю">•••</button>
         </div>
         <div class="history-list" id="historyList">
-          <div class="history-empty">Твои диалоги появятся здесь</div>
+          <div class="history-empty">Здесь появятся твои диалоги</div>
         </div>
       </div>
 
@@ -67,7 +67,7 @@
             <span id="connectionLabel">Не подключено</span>
             <span class="live-label" id="connectionStatus">OFFLINE</span>
           </div>
-          <div class="provider-name">TOKENWAVE API</div>
+          <div class="provider-name">TOKENWAVE</div>
           <div class="provider-model" id="sidebarModel">Модель не выбрана</div>
         </div>
 
@@ -77,7 +77,9 @@
         </button>
 
         <div class="user-profile">
-          <div class="profile-avatar">A</div>
+          <div class="profile-avatar">
+            <img src="./assets/akira-avatar.png" alt="AKIRA">
+          </div>
           <div class="profile-copy">
             <strong>AKIRA Workspace</strong>
             <small>Personal edition</small>
@@ -94,43 +96,48 @@
         <div class="topbar-left">
           <button class="icon-button menu-toggle" id="openSidebar" aria-label="Открыть меню">☰</button>
           <div class="breadcrumbs">
-            <span>AKIRA</span>
-            <i>/</i>
-            <strong>Workspace</strong>
+            <span>AKIRA</span><i>/</i><strong>Workspace</strong>
           </div>
         </div>
 
         <div class="topbar-right">
           <div class="model-picker-wrap">
-            <span class="top-label">MODEL</span>
+            <span class="top-label">МОДЕЛЬ</span>
             <button class="model-picker" id="modelPicker" aria-haspopup="true" aria-expanded="false">
               <span class="model-orb">✳</span>
               <span class="selected-model" id="selectedModel">Выбрать модель</span>
               <span class="chevron">⌄</span>
             </button>
+
             <div class="model-dropdown" id="modelDropdown" hidden>
+              <div class="dropdown-heading">
+                <strong>Выбери интеллект</strong>
+                <small>Доступные модели TokenWave</small>
+              </div>
               <div class="dropdown-search">
                 <span>⌕</span>
-                <input id="modelSearch" type="search" placeholder="Найти модель...">
+                <input id="modelSearch" type="search" placeholder="Поиск модели...">
               </div>
               <div class="model-list" id="modelList">
-                <div class="dropdown-empty">Сначала подключи TokenWave</div>
+                <div class="dropdown-empty">Подключи TokenWave</div>
               </div>
               <div class="dropdown-footer">
-                <span>МОДЕЛИ TOKENWAVE</span>
+                <span>MODEL PROVIDER</span>
                 <button id="refreshModels">↻ Обновить</button>
               </div>
             </div>
           </div>
+
           <button class="icon-button top-settings" id="topSettings" aria-label="Настройки">⚙</button>
         </div>
       </header>
 
       <section class="chat-viewport" id="chatViewport">
+
         <div class="welcome-screen" id="welcomeScreen">
           <div class="welcome-status">
             <span class="status-pulse"></span>
-            YOUR PERSONAL AI ENVIRONMENT
+            YOUR AI. YOUR SPACE.
           </div>
 
           <div class="hero-emblem">
@@ -144,9 +151,9 @@
           </div>
 
           <div class="welcome-copy">
-            <div class="eyebrow">A NEW WAY TO THINK</div>
-            <h1>Твоё пространство.<br><span>Твои возможности.</span></h1>
-            <p>Исследуй идеи, решай сложные задачи и создавай новое вместе с AKIRA.</p>
+            <div class="eyebrow">WELCOME TO AKIRA</div>
+            <h1>Думай шире.<br><span>Создавай больше.</span></h1>
+            <p>Твоё персональное пространство для идей, знаний, творчества и сложных задач.</p>
           </div>
 
           <div class="suggestion-grid">
@@ -154,31 +161,34 @@
               <span class="suggestion-icon purple">✳</span>
               <span class="suggestion-text">
                 <strong>Исследовать идею</strong>
-                <small>От задумки до полноценного проекта</small>
+                <small>Развить задумку в проект</small>
               </span>
               <span class="suggestion-arrow">↗</span>
             </button>
+
             <button class="suggestion-card" data-prompt="Помоги написать качественный, понятный и хорошо структурированный код.">
               <span class="suggestion-icon blue">&lt;/&gt;</span>
               <span class="suggestion-text">
                 <strong>Написать код</strong>
-                <small>Разработка и решение задач</small>
+                <small>Разработка и отладка</small>
               </span>
               <span class="suggestion-arrow">↗</span>
             </button>
+
             <button class="suggestion-card" data-prompt="Объясни мне сложную тему простым и понятным языком.">
               <span class="suggestion-icon cyan">⌘</span>
               <span class="suggestion-text">
-                <strong>Разобраться</strong>
-                <small>Понятные объяснения и обучение</small>
+                <strong>Изучить тему</strong>
+                <small>Понятные объяснения</small>
               </span>
               <span class="suggestion-arrow">↗</span>
             </button>
+
             <button class="suggestion-card" data-prompt="Предложи интересный проект и помоги мне его создать.">
               <span class="suggestion-icon pink">◇</span>
               <span class="suggestion-text">
                 <strong>Создать проект</strong>
-                <small>Воплощение идей в жизнь</small>
+                <small>От идеи до результата</small>
               </span>
               <span class="suggestion-arrow">↗</span>
             </button>
@@ -201,7 +211,7 @@
             id="promptInput"
             rows="1"
             maxlength="50000"
-            placeholder="Спроси о чём угодно..."
+            placeholder="Напиши что-нибудь..."
             aria-label="Сообщение для AKIRA"
           ></textarea>
 
@@ -214,23 +224,24 @@
 
               <div class="reasoning-wrap">
                 <button class="tool-button reasoning-button" id="reasoningButton" aria-haspopup="true" aria-expanded="false">
-                  <span class="reasoning-icon">◈</span>
-                  <span class="tool-text" id="reasoningLabel">Стандартное</span>
+                  <span class="reasoning-icon">✧</span>
+                  <span class="tool-text" id="reasoningLabel">Стандартный</span>
                   <span class="chevron">⌄</span>
                 </button>
+
                 <div class="reasoning-dropdown" id="reasoningDropdown" hidden>
                   <div class="reasoning-title">РЕЖИМ РАССУЖДЕНИЯ</div>
                   <div class="reasoning-options" id="reasoningOptions">
-                    <button data-level="0"><span>01</span><span><b>Минимальный</b><small>Быстрые ответы</small></span></button>
+                    <button data-level="0"><span>01</span><span><b>Минимальный</b><small>Максимальная скорость</small></span></button>
                     <button data-level="1"><span>02</span><span><b>Низкий</b><small>Простые задачи</small></span></button>
-                    <button data-level="2"><span>03</span><span><b>Умеренный</b><small>Небольшой анализ</small></span></button>
+                    <button data-level="2"><span>03</span><span><b>Умеренный</b><small>Базовый анализ</small></span></button>
                     <button data-level="3" class="selected"><span>04</span><span><b>Стандартный</b><small>Баланс скорости и глубины</small></span></button>
-                    <button data-level="4"><span>05</span><span><b>Повышенный</b><small>Более глубокий анализ</small></span></button>
+                    <button data-level="4"><span>05</span><span><b>Повышенный</b><small>Больше внимания деталям</small></span></button>
                     <button data-level="5"><span>06</span><span><b>Высокий</b><small>Сложные задачи</small></span></button>
-                    <button data-level="6"><span>07</span><span><b>Максимальный</b><small>Детальная проработка</small></span></button>
+                    <button data-level="6"><span>07</span><span><b>Максимальный</b><small>Глубокая проработка</small></span></button>
                     <button data-level="7"><span>08</span><span><b>Экстра</b><small>Максимум доступных усилий</small></span></button>
                   </div>
-                  <div class="reasoning-note">Доступные уровни зависят от выбранной модели.</div>
+                  <div class="reasoning-note">Реальная глубина зависит от возможностей модели.</div>
                 </div>
               </div>
             </div>
@@ -243,10 +254,26 @@
             </div>
           </div>
         </div>
+
         <div class="composer-disclaimer">
           AKIRA может допускать ошибки. Проверяй важную информацию.
         </div>
       </section>
+
+      <nav class="mobile-nav" aria-label="Основная навигация">
+        <button class="mobile-nav-item active" id="mobileChatNav" type="button">
+          <span>◈</span><small>Чат</small>
+        </button>
+        <button class="mobile-nav-item" id="mobileHistoryNav" type="button">
+          <span>◷</span><small>История</small>
+        </button>
+        <button class="mobile-nav-item" id="mobileLibraryNav" type="button">
+          <span>▤</span><small>Файлы</small>
+        </button>
+        <button class="mobile-nav-item" id="mobileSettingsNav" type="button">
+          <span>⚙</span><small>Настройки</small>
+        </button>
+      </nav>
     </main>
   </div>
 
@@ -256,17 +283,17 @@
       <div class="modal-symbol">✳</div>
       <div class="eyebrow">CONNECT YOUR INTELLIGENCE</div>
       <h2>Подключить <span>TokenWave</span></h2>
-      <p>Введи свой API-ключ, чтобы загрузить список доступных моделей и начать общение.</p>
+      <p>Введи свой API-ключ, чтобы получить список доступных моделей.</p>
       <label for="apiKeyInput">TOKENWAVE API KEY</label>
       <div class="key-input-wrap">
-        <input id="apiKeyInput" type="password" placeholder="Вставь API-ключ" autocomplete="off">
+        <input id="apiKeyInput" type="password" placeholder="API-ключ" autocomplete="off">
         <button type="button" id="toggleKeyVisibility" aria-label="Показать ключ">◉</button>
       </div>
       <div class="modal-error" id="connectError" role="alert"></div>
       <button class="primary-button" id="connectButton" type="submit">
         <span>Подключить AKIRA</span><span>↗</span>
       </button>
-      <div class="security-note">Ключ будет сохранён в хранилище браузера. Не используй общедоступные устройства.</div>
+      <div class="security-note">Ключ хранится в браузере. Не используй общедоступные устройства.</div>
     </form>
   </dialog>
 
@@ -275,27 +302,31 @@
       <button class="modal-close" id="closeSettings" aria-label="Закрыть">×</button>
       <div class="eyebrow">PERSONALIZE YOUR SPACE</div>
       <h2>Настройки <span>AKIRA</span></h2>
+
       <div class="settings-group">
         <div>
           <strong>Подключение TokenWave</strong>
-          <small>Управление API-ключом и соединением</small>
+          <small>API-ключ и соединение</small>
         </div>
         <button class="secondary-button" id="manageConnection">Подключить</button>
       </div>
+
       <div class="settings-group">
         <div>
-          <strong>Выбранная модель</strong>
+          <strong>Текущая модель</strong>
           <small id="settingsModelName">Не выбрана</small>
         </div>
         <button class="secondary-button" id="settingsChooseModel">Выбрать</button>
       </div>
+
       <div class="settings-group">
         <div>
-          <strong>Локальная история</strong>
-          <small>Очистить сохранённые диалоги</small>
+          <strong>История диалогов</strong>
+          <small>Удалить сохранённые беседы</small>
         </div>
         <button class="secondary-button danger-button" id="deleteAllChats">Очистить</button>
       </div>
+
       <div class="settings-version">AKIRA AI · PERSONAL EDITION</div>
     </div>
   </dialog>
@@ -304,5 +335,5 @@
 
   <script src="./script.js" defer></script>
 </body>
-            </html>
-            
+  </html>
+  
